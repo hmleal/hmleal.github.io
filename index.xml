@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hmleal</title>
+    <link>http://hmleal.github.io/</link>
+    <description>Recent content on hmleal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 13 Oct 2016 20:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="http://hmleal.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TDC 2016</title>
+      <link>http://hmleal.github.io/posts/tdc-2016/</link>
+      <pubDate>Thu, 13 Oct 2016 20:00:00 +0100</pubDate>
+      
+      <guid>http://hmleal.github.io/posts/tdc-2016/</guid>
+      <description>The developer conference (TDC) é um evento realizado pela GlobalCode e pela Uniritter. Ele é um evento divido em trilhas onde cada trilha apresenta de 5 a 8 palestras e é coordenado por um profissional da área. Esse ano o evento foi realizado entre os dias 05 e 08 de outubro.
+Esse foi o primeiro ano onde eu participei e tenho que dizer que foi incrível, estive nos dias 06 e 07.</description>
+    </item>
+    
+    <item>
+      <title>Elasticsearch</title>
+      <link>http://hmleal.github.io/posts/elasticsearch/</link>
+      <pubDate>Wed, 27 Jul 2016 20:00:00 +0100</pubDate>
+      
+      <guid>http://hmleal.github.io/posts/elasticsearch/</guid>
+      <description>E ai pessoal, tenho andado um pouco sumido durante esses últimos tempos, mas agora que tudo voltou a normalidade tornarei a escrever algumas coisas por aqui.
+Ultimamente tenho trabalhado com um novo amigo, o Elasticsearch. Mas afinal o que é esse cara?
+O Elasticsearch é um servidor de buscas distribuído baseado no Apache Lucene. Foi desenvolvido por Shay Banon e disponibilizado sobre os termos Apacha License. Ele foi desenvolvido em Java e possui código fonte aberto liberado sob os termos da Licença Apache.</description>
+    </item>
+    
+    <item>
+      <title>Brace Yourselves Kde 5 Is Here</title>
+      <link>http://hmleal.github.io/posts/brace-yourselves-kde-5-is-here/</link>
+      <pubDate>Tue, 27 Jan 2015 20:00:00 +0100</pubDate>
+      
+      <guid>http://hmleal.github.io/posts/brace-yourselves-kde-5-is-here/</guid>
+      <description>Conforme noticiado essa semana a coleção de softwares do KDE tem sido atualizado para versão do KDE Applications. Com isso os desenvolvedores do KDE iniciaram o port dos seus software para o KDE Framework e Qt5.
+Quando um port do KDE Applications para o KDE Frameworks é considerado estável, este é disponibilizado com o KDE Applications e seu desenvolvimento e correções de bugs não são mais aplicados para a versão Qt4/KDE4.</description>
+    </item>
+    
+    <item>
+      <title>Instalando Postgresql No Archlinux</title>
+      <link>http://hmleal.github.io/posts/instalando-postgresql-no-archlinux/</link>
+      <pubDate>Sat, 24 Jan 2015 20:00:00 +0100</pubDate>
+      
+      <guid>http://hmleal.github.io/posts/instalando-postgresql-no-archlinux/</guid>
+      <description>Olá pessoal o artigo é sobre como instalar e rodar o PostgreSQL no seu ArchLinux. Atualmente esse é o banco primário no meu stack de desenvolvimento.
+O PostgreSQL é um poderoso sistema gerenciador de banco de dados objeto-relacional de código aberto. Tem mais de 15 anos de desenvolvimento ativo e uma arquitetura que comprovadamente ganhou forte reputação de confiabilidade, integridade de dados e conformidade a padrões. Roda em todos os grandes sistemas operacionais, incluindo GNU/Linux, Unix (AIX, BSD, HP-UX, SGI IRIX, Mac OS X, Solaris, Tru64), e MS Windows.</description>
+    </item>
+    
+    <item>
+      <title>Django Problemas Com Runserver</title>
+      <link>http://hmleal.github.io/posts/django-problemas-com-runserver/</link>
+      <pubDate>Tue, 13 Jan 2015 20:00:00 +0100</pubDate>
+      
+      <guid>http://hmleal.github.io/posts/django-problemas-com-runserver/</guid>
+      <description>Olá pessoal! Como todos que acompanham o blog sabem que atualmente tenho trabalhado muito forte com python e django. Recentemente no meu fluxo de trabalho aconteceu um pequeno problema com o runserver do django.
+Para rodar um projeto utilizando o django precisamos do seguinte comando:
+1  $ python manage.py runserver   Acontece que parando o servidor utilizando as teclas CTRL + C as vezes a linha do terminal retorna ao normal mas o servidor continua rodando, não me perguntem o por que.</description>
+    </item>
+    
+  </channel>
+</rss>

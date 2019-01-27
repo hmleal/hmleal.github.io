@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-58687169-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+
+    <title>hmleal</title>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="http://hmleal.github.io/css/app.css?1548597023">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <a href="http://hmleal.github.io">hmleal</a>
+        </div>
+        <div class="header__menu">
+            
+            
+            <a href="/posts/" title="">Posts</a>
+            
+        </div>
+    </header>
+    
+<div class="container">
+    <div class="post">
+    <h2 class="post__title">
+        <a class="post__link" href="http://hmleal.github.io/posts/instalando-postgresql-no-archlinux/">Instalando Postgresql No Archlinux</a>
+    </h2>
+    <span class="post__meta">
+        January 24, 2015 by <span class="post__author">Henrique Leal</span>
+    </span>
+    
+
+<p>Olá pessoal o artigo é sobre como instalar e rodar o <strong>PostgreSQL</strong> no seu
+<strong>ArchLinux</strong>. Atualmente esse é o banco primário no meu stack de desenvolvimento.</p>
+
+<p>O PostgreSQL é um poderoso sistema gerenciador de banco de dados
+objeto-relacional de código aberto. Tem mais de 15 anos de desenvolvimento
+ativo e uma arquitetura que comprovadamente ganhou forte reputação de
+confiabilidade, integridade de dados e conformidade a padrões. Roda em todos os
+grandes sistemas operacionais, incluindo GNU/Linux, Unix (AIX, BSD, HP-UX, SGI
+IRIX, Mac OS X, Solaris, Tru64), e MS Windows.</p>
+
+<h3 id="instalação-no-archlinux">Instalação no ArchLinux</h3>
+
+<p>A instalação é mais simples impossível é necessário apenas o seguinte comando:</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># pacman -S postgresql</span></code></pre></td></tr></table>
+</div>
+</div>
+
+<p>Um usuário chamado postgres será criado automáticamente com a instalação.
+Então será necessário especificar a senha do usuário.</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># passwd postgres</span></code></pre></td></tr></table>
+</div>
+</div>
+
+<p>Depois disso temos o banco de dados instalado e pronto para uso.
+E como ninguém é de ferro para ficar usando o terminal para efetuar o
+gerenciamento do banco é interessante a instalação da ferramenta pgadmin3.</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># pacman -S pgadmin3</span></code></pre></td></tr></table>
+</div>
+</div>
+
+<h3 id="referências">Referências</h3>
+
+<ul>
+<li><a href="http://www.postgresql.org.br/old/sobre">http://www.postgresql.org.br/old/sobre</a></li>
+<li>ArchWiki: <a href="https://wiki.archlinux.org/index.php/PostgreSQL">https://wiki.archlinux.org/index.php/PostgreSQL</a></li>
+</ul>
+
+</div>
+</div>
+
+</body>
+
+</html>

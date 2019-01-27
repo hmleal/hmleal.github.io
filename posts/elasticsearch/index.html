@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-58687169-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+
+    <title>hmleal</title>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="http://hmleal.github.io/css/app.css?1548597023">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <a href="http://hmleal.github.io">hmleal</a>
+        </div>
+        <div class="header__menu">
+            
+            
+            <a href="/posts/" title="">Posts</a>
+            
+        </div>
+    </header>
+    
+<div class="container">
+    <div class="post">
+    <h2 class="post__title">
+        <a class="post__link" href="http://hmleal.github.io/posts/elasticsearch/">Elasticsearch</a>
+    </h2>
+    <span class="post__meta">
+        July 27, 2016 by <span class="post__author">Henrique Leal</span>
+    </span>
+    
+
+<p>E ai pessoal, tenho andado um pouco sumido durante esses últimos tempos, mas
+agora que tudo voltou a normalidade tornarei a escrever algumas coisas por
+aqui.</p>
+
+<p>Ultimamente tenho trabalhado com um novo amigo, o Elasticsearch. Mas afinal o
+que é esse cara?</p>
+
+<p>O Elasticsearch é um servidor de buscas distribuído baseado no Apache Lucene.
+Foi desenvolvido por Shay Banon e disponibilizado sobre os termos Apacha
+License. Ele foi desenvolvido em Java e possui código fonte aberto liberado sob
+os termos da Licença Apache.</p>
+
+<p>Ele possui uma interface rest para que seja fácil integrar com qualquer
+linguagem que você deseje. Com as configurações default fica acessível atráves
+do endereço <a href="http://localhost:9200">http://localhost:9200</a> e você pode enviar comandos via curl.</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">curl -X GET http://localhost:9200</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>Esse comando mostra as configurações básicas do Elasticsearch instalado.</p>
+
+<h3 id="indexando-novos-documentos">Indexando novos documentos</h3>
+
+<p>O Elasticsearch usa um esquema de indice, tipo e id para gravar um elemento
+novo. Então o formato da url para indexar novos documentos é o seguinte:</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">http://hostname:port/index_name/doc_type/doc_id</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>Exemplo:</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">curl -XPOST http://localhost:9000/blog/articles/1 -d <span style="color:#e6db74">&#39;{&#34;content&#34;: &#34;Senhor dos anéis.&#34;}&#39;</span></code></pre></td></tr></table>
+</div>
+</div>
+
+<h3 id="atualizando-um-documento">Atualizando um documento</h3>
+
+<p>Por default o Elasticsearch sobreescreve documentos ao invés de atualiza-los.
+Então para esse trabalho precisamos utilizar a api de update. Cujo formato da
+url é o seguinte:</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">http://hostname:port/index_name/doc_type/doc_id/_update</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>Utilizando essa api precisamos de um pequeno truque que é passar o campo a ser
+atualizado dentro de um json na chave doc.</p>
+
+<p>Exemplo:</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">curl -XPUT http://localhost:9200/blog/articles/1 -d <span style="color:#e6db74">&#39;{&#34;doc&#34;: {&#34;content&#34;: &#34;Senhor dos anéis 2&#34;}}&#39;</span></code></pre></td></tr></table>
+</div>
+</div>
+
+<h3 id="deletando-documentos">Deletando documentos</h3>
+
+<p>Esse é a parte mais fácil. Seguindo o padrão rest o padrão temos o seguinte:</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">http://hostname:port/index_name/doc_type/doc_id</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>Exemplo:</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">curl -XDELETE http://localhost:9200/blog/articles/1</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>Esse é um início do funcionamento do Elasticsearch se tiverem interesse deixo
+alguns links abaixo para aprofundar seu conhecimento nessa ferramenta.</p>
+
+<h3 id="referências">Referências</h3>
+
+<ul>
+<li><a href="http://elasticsearch-cheatsheet.jolicode.com">http://elasticsearch-cheatsheet.jolicode.com</a></li>
+<li><a href="https://marcobonzanini.com/2015/02/02/how-to-query-elasticsearch-with-python">https://marcobonzanini.com/2015/02/02/how-to-query-elasticsearch-with-python</a></li>
+</ul>
+
+</div>
+</div>
+
+</body>
+
+</html>
