@@ -6,10 +6,22 @@
     <description>Recent content in Posts on hmleal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Oct 2016 20:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 12 Apr 2019 08:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://hmleal.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Quicksilver Meu Primeiro Framework</title>
+      <link>http://hmleal.github.io/posts/quicksilver-meu-primeiro-framework/</link>
+      <pubDate>Fri, 12 Apr 2019 08:00:00 +0000</pubDate>
+      
+      <guid>http://hmleal.github.io/posts/quicksilver-meu-primeiro-framework/</guid>
+      <description> Recentemente decidi entender mais como funcionam os frameworks para desenvolvimento web. Foi ai que então surgiu a ideia de criar um do zero.
+O único requisíto seria não possuir nenhuma dependência externa. Ainda existem muitas coisas que podem ser implementadas mas já temos umas versão minimamente funcional
+Você pode conferir e enviar sugestões no repositório: Quicksilver
+Referências  https://www.python.org/dev/peps/pep-0333/ https://www.sitepoint.com/python-web-applications-the-basics-of-wsgi/  </description>
+    </item>
     
     <item>
       <title>TDC 2016</title>
