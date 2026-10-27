@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Hashing passwords | Henrique Leal</title>
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/prism.css">
+
+
+      <script src="/js/main.js"></script>
+
+</head>
+<body>
+  <header>
+    
+
+
+
+<a href="/">Henrique Leal</a> - Hashing passwords (<time datetime="2026-09-29T09:00:00-07:00">September 29, 2026</time>)
+
+  </header>
+  <main>
+  <h1>Hashing passwords</h1>
+
+  <p>Have you ever wondered how websites actually store your passwords? How do they
+know what you typed is actually correct and let you access your data?</p>
+<h2 id="hashing">Hashing</h2>
+<p>The magic behind this is the work hashing, imagine a function that accepts the
+password as a parameter and it generate &ldquo;random&rdquo; sequence of caracthers so the
+developers of the website cannot look at it and identify your password.</p>
+<pre><code class="language-python">import hashlib
+
+
+def encode(password):
+    password_hash = hashlib.md5(password.encode(&quot;UTF-8&quot;)).digest()
+    return &quot;%s$%s&quot; % (&quot;md5_custom&quot;, password_hash.hex())
+
+
+for password in (encode(&quot;2244&quot;), encode(&quot;4466&quot;)):
+    print(password)
+</code></pre>
+<p>This is basically what Django does with your password before storing, Django only
+store a hash that can be checked when you try to login again in the future. Since
+the beginning of internet different hash methods have been used, include MD5.</p>
+<h2 id="rainbow-table">Rainbow table</h2>
+<p>The problem with this system is that passwords can be calculated and stored into
+a <strong>rainbow table</strong> a pre-calculated table with a list of passwords - In fact
+all common passwords could be stored and in case a hacker get access to the
+database what he needs to know is to check the passwords agains the rainbow-table
+and he can have access to your account.</p>
+<h2 id="salt">Salt</h2>
+<p>TODO</p>
+<h2 id="django-solution">Django solution</h2>
+<p>If you check your database right now under <code>django_users</code> what you will find is
+something like</p>
+<pre><code>algo$salt$
+</code></pre>
+
+</main>
+  <footer><p>Thanks for reading my blog.</p>
+</footer>
+      <script src="/js/prism.js"></script>
+</body>
+</html>

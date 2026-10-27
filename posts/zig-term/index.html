@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Zig Term | Henrique Leal</title>
+
+      <link rel="stylesheet" href="/css/main.min.a5ea0462fceed0fd2faccedd796c1314d12388527904f15f4db66c85e8ca8d2f.css" integrity="sha256-peoEYvzu0P0vrM7deWwTFNEjiFJ5BPFfTbZshejKjS8=" crossorigin="anonymous">
+      <link rel="stylesheet" href="/css/prism.min.50899ea3813fdb1fbb79fa93f0b6965745767b863f9994fb0958d58ebd9ad3f2.css" integrity="sha256-UImeo4E/2x&#43;7efqT8LaWV0V2e4Y/mZT7CVjVjr2a0/I=" crossorigin="anonymous">
+
+
+      <script src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js" integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <header>
+    
+
+
+
+<a href="/">Henrique Leal</a> - Zig Term (<time datetime="2026-10-27T20:00:00&#43;00:00">October 27, 2026</time>)
+
+  </header>
+  <main>
+  <h1>Zig Term</h1>
+
+  <p>I would like to introduce you to <a href="https://github.com/hmleal/zig-term"><strong>zig-term</strong></a>
+a small, cross-platform terminal library for <strong>Zig</strong>, inspired by Go&rsquo;s <code>x/term</code>.
+The goal is to make common terminal operations simple and approachable without
+requiring users to deal directly with platform-specific APIs such as termios or
+Windows Console APIs.</p>
+<h2 id="how-to-add-it-to-your-own-project">How to add it to your own project</h2>
+<p>Please use <code>zig fetch</code></p>
+<h3 id="examples">Examples</h3>
+<p><strong>How to print terminal <code>width</code> and <code>height</code></strong></p>
+<pre><code class="language-zig">const std = @import(&quot;std&quot;);
+const Io = std.Io;
+
+const term = @import(&quot;term&quot;);
+
+pub fn main(init: std.process.Init) !void {
+    const io = init.io;
+
+    const stdin = std.Io.File.stdin();
+    const size = try term.getSize(stding);
+
+    std.log.info(&quot;Terminal {d}x{d}&quot;, .{size.width, size.heigth});
+}
+</code></pre>
+<p><strong>How to enter the raw mode and leave pressing <code>q</code> or <code>CTRL + C</code></strong></p>
+<pre><code class="language-zig">const std = @import(&quot;std&quot;);
+const Io = std.Io;
+
+const term = @import(&quot;term&quot;);
+
+pub fn main(init: std.process.Init) !void {
+    const io = init.io;
+
+    const stdin = std.Io.File.stdin();
+    const size = try term.getSize(stding);
+    const state = try term.makeRaw(stdin);
+    defer term.restore(stdin, state) catch {};
+
+    var running = std.atomic.Value(bool).init(true);
+
+    // Start a new thread to check for the interruption signal
+    const thread = try std.Thread.spawn(.{}, readInput, .{ io, stdin, &amp;running });
+    defer thread.join();
+}
+
+fn readInput(io: std.Io, stdin: std.Io.File, running: *std.atomic.Value(bool)) void {
+    var read_buffer: [1]u8 = undefined;
+    var stdin_file_reader: Io.File.Reader = .init(stdin, io, &amp;read_buffer);
+
+    while (running.load(.acquire)) {
+        const byte = stdin_file_reader.interface.takeByte() catch return;
+
+        if (byte == 3 or byte == 'q') {
+            running.store(false, .release);
+            return;
+        }
+    }
+}
+</code></pre>
+<p>That is it for today, next post I&rsquo;ll share how to build the matrix rain effect
+using the zig-term library.</p>
+
+</main>
+  <footer><p>Thanks for reading my blog.</p>
+</footer>
+        <script src="/js/prism.min.6c23491a9766643b2aeab64b0726118472b8a998806e4c97eb0d91914e7d8d18.js" integrity="sha256-bCNJGpdmZDsq6rZLByYRhHK4qZiAbkyX6w2RkU59jRg=" crossorigin="anonymous"></script>
+</body>
+</html>

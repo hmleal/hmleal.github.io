@@ -3,13 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://hmleal.github.io/</loc>
-    <lastmod>2026-09-29T09:00:00-07:00</lastmod>
+    <lastmod>2026-10-27T20:00:00+00:00</lastmod>
   </url><url>
     <loc>http://hmleal.github.io/posts/</loc>
-    <lastmod>2026-09-29T09:00:00-07:00</lastmod>
+    <lastmod>2026-10-27T20:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://hmleal.github.io/pages/</loc>
-    <lastmod>2018-07-01T16:55:20+01:00</lastmod>
+    <loc>http://hmleal.github.io/posts/zig-term/</loc>
+    <lastmod>2026-10-27T20:00:00+00:00</lastmod>
   </url><url>
     <loc>http://hmleal.github.io/posts/tdc-2016/</loc>
     <lastmod>2016-10-13T20:00:00+01:00</lastmod>
@@ -27,6 +27,8 @@
     <lastmod>2015-01-13T20:00:00+01:00</lastmod>
   </url><url>
     <loc>http://hmleal.github.io/categories/</loc>
+  </url><url>
+    <loc>http://hmleal.github.io/pages/</loc>
   </url><url>
     <loc>http://hmleal.github.io/tags/</loc>
   </url>
